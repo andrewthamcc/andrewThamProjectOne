@@ -27,6 +27,7 @@
         </nav>
       </div><!-- clearfix ends -->
 
+      <!-- hamburger menu for mobile -->
       <button class="navButton" aria-label="menu navigation">
         <i class="fa fa-bars" aria-hidden="true"></i>
       </button>
@@ -82,7 +83,7 @@
             <a href="#" class="readMoreButton">Read More</a>
           </div>
         </div>
-      </div>
+      </div><!-- clearfix ends -->
     </section>
 
     <!-- drive style section -->
@@ -97,7 +98,7 @@
             <a href="#" class="readMoreButton">Read More</a>
           </div>
         </div>
-      </div>
+      </div><!-- clearfix ends -->
     </section>
 
     <!-- links section -->
@@ -141,9 +142,11 @@
         <p>Subscribe to our newsletter</p>
 
         <form class="footerEmailForm clearfix">
-          <label for="emailInput" class="visuallyHidden">Email Address</label>
-          <input type="email" placeholder="email address" name="email" class="footerEmailInput" id="emailInput">
-          <input type="submit" value="subscribe" class="footerEmailSubmit kanit">
+          <fieldset class="clearfix">
+            <label for="emailInput" class="visuallyHidden">Email Address</label>
+            <input type="email" placeholder="email address" name="email" class="footerEmailInput" id="emailInput">
+            <input type="submit" value="subscribe" class="footerEmailSubmit kanit">
+          </fieldset>
         </form>
       </div>
 
@@ -164,8 +167,9 @@
           <li><a href="#">contact</a></li>
         </ul>
       </nav>
-
     </div>
+
+    <!-- copyright tag outside of container for full bleed -->
     <p class="footerCopyright">Copyright &copy; 2019 HackerYou</p>
   </footer>
 </body>

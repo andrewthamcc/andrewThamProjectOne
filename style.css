@@ -42,7 +42,7 @@ a {
   margin: 0 auto;
 }
 
-/* font style used through page */
+/* font style */
 .kanit {
   font-family: "Kanit", sans-serif;
   font-weight: 700;
@@ -56,7 +56,7 @@ a {
   font-weight: 300;
 }
 
-/* read more button */
+/* button style for anchor links */
 .readMoreButton {
   font-family: "Kanit", sans-serif;
   font-weight: 700;
@@ -221,7 +221,7 @@ a {
   margin-left: 1.5rem;
 }
 
-/* new models section and driveStyle */
+/* new models section and drive style */
 .articleTitle {
   color: #0b0b0b;
   font-size: 2.1rem;
@@ -245,22 +245,19 @@ a {
   padding: 5% 2.5% 5% 5%;
 }
 
-.newModelsImage {
-  background-image: url("./assets/articleImage1.jpg");
+.articleImage {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   height: 75vh;
+}
+
+.newModelsImage {
+  background-image: url("./assets/articleImage1.jpg");
 }
 
 .driveStyleImage {
   background-image: url("./assets/articleImage2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  height: 75vh;
 }
 
 /* drive solo links section */
@@ -292,17 +289,18 @@ a {
   transition: 0.3s ease;
 }
 
-.driveSoloLinks a:hover i {
-  opacity: 0.8;
-}
-
 /* footer section */
 .footer {
   background-color: #6c0918;
   color: #ffffff;
-
   /* increased line height to match design */
   line-height: 1.5rem;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .footerTitle {
@@ -344,7 +342,6 @@ a {
   color: #ffffff;
 
   border: none;
-  margin: 0;
   padding: 0.5rem 0.75rem;
 }
 
@@ -368,11 +365,16 @@ a {
     height: 50vh;
   }
 
+  /* resize padding on article text edges do not align to container anymore */
+  .articleText {
+    padding: 1%;
+  }
+
   .footerEmailForm {
     float: none;
   }
 
-  /* match submit button width to input width */
+  /* match submit button width to input */
   .footerEmailSubmit {
     width: 20rem;
     margin: 0.5rem 0;
@@ -384,11 +386,12 @@ a {
 }
 
 @media (max-width: 1150px) {
-  /* re-position hero image position so main title stays in black area */
+  /* re-position hero image position so main title stays in black space */
   .header {
     background-position-x: 35%;
   }
 
+  /* reduce margin on main title */
   .mainTitle {
     margin: 2rem 0;
   }
@@ -406,19 +409,21 @@ a {
 
   .articleText {
     text-align: center;
+    margin: 1.75rem 0;
   }
 
+  /* resize div image */
   .articleImage {
     height: 30vh;
   }
 
   /* resize links section */
   .driveSoloLinks {
-    height: 25vh;
+    height: 30vh;
   }
 
   .driveSoloLinksList {
-    padding-top: 3rem;
+    padding-top: 2rem;
   }
 }
 
@@ -434,10 +439,12 @@ a {
     display: block;
   }
 
+  /* repositioning the hero title */
   .headerHeroTitle {
     padding-top: calc(66vh - 4.85rem);
   }
 
+  /* removing float from week highlight section */
   .weekHighlight {
     margin: 3rem 0;
   }
@@ -461,10 +468,6 @@ a {
 
   .weekHighlightTitle {
     line-height: normal;
-  }
-
-  .driveSoloLinksList {
-    padding-top: 1.5rem;
   }
 
   .footerEmail {
@@ -550,12 +553,8 @@ a {
 
   /* changing background image for mobile to maintain perspective of image */
   .driveSoloLinks {
-    height: 50vh;
+    height: 60vh;
     background-image: url("./assets/driveSoloBackgroundMobile.jpg");
-  }
-
-  .driveSoloLinksList {
-    padding-top: 0;
   }
   
   .driveSoloLinksListItem {
