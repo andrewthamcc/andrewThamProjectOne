@@ -1,0 +1,597 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+/* global styles */
+html {
+  font-size: 125%;
+}
+
+h1, 
+h2, 
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.container {
+  width: 80%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* font style used through page */
+.kanit {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* read more button */
+.readMoreButton {
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  background-color: #ba0621;
+  padding: 0.3rem 0.75rem;
+
+  transition: background 0.3s ease;
+}
+
+.readMoreButton:hover {
+  background-color: #000000;
+}
+
+/* header styles */
+.header {
+  background-image: url("./assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+  width: 100%;
+
+  color: #ffffff;
+
+  position: relative;
+}
+
+.mainNavTitle {
+  font-size: 1.275rem;
+  color: #ffffff;
+
+  float: left;
+  margin-top: 1.2rem;
+}
+
+.mainNav {
+  font-family: "Catamaran", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.61rem;
+
+  float: right;
+  /* incrased margin to match design */
+  margin-top: 1.6rem;
+}
+
+.mainNavListItem {
+  float: left;
+  padding-left: 1rem;
+}
+
+.mainNavListItem:first-of-type {
+  padding-left: 0;
+}
+
+.mainNav a:hover {
+  border-bottom: 0.1rem white solid;
+}
+
+/* hamburger menu button */
+.navButton {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 1.25rem;
+
+  position: absolute;
+  top: 1rem;
+  right: 10%;
+
+  display: none;
+}
+
+.headerHeroTitle {
+  font-size: 5.81rem;
+  line-height: 4.85rem;
+  letter-spacing: 1px;
+  color: #cc1d36;
+
+  padding-top: calc(53vh - 4.85rem);
+}
+
+.headerHeroSubTitle {
+  font-family: "Lato", sans-serif;
+  font-size: 1.55rem;
+  line-height: 1.02rem;
+  letter-spacing: 0.3px;
+  /* added margin to match design */
+  margin: 0.5rem 0;
+}
+
+.headerSocialIconList {
+  font-size: 1.2rem;
+
+  position: absolute;
+  right: 3%;
+  bottom: 6%;
+}
+
+.headerSocialIconListItem {
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+.headerSocialIconListItem:last-of-type {
+  margin-bottom: 0;
+}
+
+/* main styles */
+.mainTitle {
+  color: #0b0b0b;
+  font-size: 2.1rem;
+  text-align: center;
+  margin: 4.65rem 0 4.85rem; 
+}
+
+/* gallery section */
+.galleryImage {
+  float: left;
+
+  /* account for only the margin on the middle image */
+  width: calc(calc(100% / 3) - 2%);
+}
+
+/* apply margin to only center gallery element */
+.galleryImage:nth-of-type(2) {
+  margin: 0 3%;
+}
+
+.weekHighlightTitle {
+  color: #0b0b0b;
+  font-size: 2.1rem;
+  line-height: 1rem;
+}
+
+.sectionText {
+  line-height: 1.45rem;
+  color: #1f2022;
+  margin: 0.8rem 0 2.2rem;
+}
+
+/* week highlight section */
+.weekHighlight {
+  margin: 5rem 0;
+}
+
+.weekHighlightImage,
+.weekHighlightText {
+  float: left;
+}
+
+.weekHighlightImage {
+  width: 25%;
+}
+
+.weekHighlightText {
+  width: calc(75% - 1.5rem);
+  margin-left: 1.5rem;
+}
+
+/* new models section and driveStyle */
+.articleTitle {
+  color: #0b0b0b;
+  font-size: 2.1rem;
+  /* increased line height for proper spacing */
+  line-height: 2rem;
+}
+
+.articleText, 
+.articleImage {
+  float: left;
+  width: 50%;
+}
+
+/* floating one div right so when not floated positioning is correct in order from top to bottom */
+.right {
+  float: right;
+}
+
+/* padding left of 2.5% matches width of container class to edge of screen */
+.articleText {
+  padding: 5% 2.5% 5% 5%;
+}
+
+.newModelsImage {
+  background-image: url("./assets/articleImage1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 75vh;
+}
+
+.driveStyleImage {
+  background-image: url("./assets/articleImage2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 75vh;
+}
+
+/* drive solo links section */
+.driveSoloLinks {
+  background-image: url("./assets/driveSoloBackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 40vh;
+  width: 100%;
+}
+
+.driveSoloLinksList {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.driveSoloLinksListItem {
+  float: left;
+  width: calc(100% / 3);
+}
+
+.driveSoloLinksList i {
+  color: #cc1d36;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  
+  transition: 0.3s ease;
+}
+
+.driveSoloLinks a:hover i {
+  opacity: 0.8;
+}
+
+/* footer section */
+.footer {
+  background-color: #6c0918;
+  color: #ffffff;
+
+  /* increased line height to match design */
+  line-height: 1.5rem;
+}
+
+.footerTitle {
+  font-size: 1.25rem;
+}
+
+.footerEmail, 
+.footerContact,
+.footerNav {
+  float: left;
+  margin: 4.8rem 0 5.65rem;
+}
+
+.footerEmail {
+  width: 55%;
+}
+
+.footerContact {
+  width: 35%;
+}
+
+.footerNav {
+  width: 10%;
+}
+
+.footerEmailInput, 
+.footerEmailSubmit {
+  display: block;
+  float: left;
+}
+
+.footerEmailInput {
+  padding: 0.5rem 1.5rem;
+  width: 20rem;
+}
+
+.footerEmailSubmit {
+  background-color: #000000;
+  color: #ffffff;
+
+  border: none;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+}
+
+.footerNav {
+  text-align: right;
+}
+
+.footerCopyright {
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.61rem;
+  padding: 0.64rem 0;
+  background-color: #0b0101;
+}
+
+/* responsive media queries */
+@media (max-width: 1250px) {
+  /* change height of article images */
+  .newModelsImage,
+  .driveStyleImage {
+    height: 50vh;
+  }
+
+  .footerEmailForm {
+    float: none;
+  }
+
+  /* match submit button width to input width */
+  .footerEmailSubmit {
+    width: 20rem;
+    margin: 0.5rem 0;
+  }
+
+  .footerEmailInput {
+    text-align: center;
+  }
+}
+
+@media (max-width: 1150px) {
+  /* re-position hero image position so main title stays in black area */
+  .header {
+    background-position-x: 35%;
+  }
+
+  .mainTitle {
+    margin: 2rem 0;
+  }
+  
+  .sectionText {
+    margin-bottom: 0.8rem;
+  }
+
+  /* remove floats on articles */
+  .articleText,
+  .articleImage {
+    float: none;
+    width: 100%;
+  }
+
+  .articleText {
+    text-align: center;
+  }
+
+  .articleImage {
+    height: 30vh;
+  }
+
+  /* resize links section */
+  .driveSoloLinks {
+    height: 25vh;
+  }
+
+  .driveSoloLinksList {
+    padding-top: 3rem;
+  }
+}
+
+@media (max-width: 940px) {
+  /* removing navigation nav and title and displaying hamburger */
+  .mainNavTitle,
+  .mainNav,
+  .headerSocialIconList {
+    display: none;
+  }
+
+  .navButton {
+    display: block;
+  }
+
+  .headerHeroTitle {
+    padding-top: calc(66vh - 4.85rem);
+  }
+
+  .weekHighlight {
+    margin: 3rem 0;
+  }
+
+  .weekHighlightImage,
+  .weekHighlightText {
+    float: none;
+  }
+
+  .weekHighlightImage {
+    width: auto;
+    height: 15rem;
+    margin: 0 auto;
+  }
+
+  .weekHighlightText {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .weekHighlightTitle {
+    line-height: normal;
+  }
+
+  .driveSoloLinksList {
+    padding-top: 1.5rem;
+  }
+
+  .footerEmail {
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  .footerEmailInput,
+  .footerEmailSubmit {
+    width: 100%;
+  }
+
+  .footerContact,
+  .footerNav {
+    width: 50%;
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* removing third gallery image and resizing margins */
+  .galleryImage:nth-of-type(2) {
+    margin-right: 0;
+  }
+  
+  .galleryImage:last-of-type {
+    display: none;
+  }
+
+  .galleryImage {
+    width: calc(50% - 2%);
+  }
+
+  .galleryImage:first-of-type {
+    margin-right: 1%;
+  }
+
+  .footerContact {
+    width: 80%;
+  }
+
+  .footerNav {
+    width: 20%;
+  }
+}
+
+@media (max-width: 550px) {
+  /* re-position hero image position so main title stays in black area */
+  .header {
+    background-position-x: 40%;
+  }
+
+  .headerHeroTitle {
+    font-size: 3.255rem;
+    line-height: 2.715rem;
+  }
+
+  .headerHeroSubTitle {
+    font-size: 0.87rem;
+    line-height: 0.885rem;
+  }
+
+  .weekHighlightTitle,
+  .articleTitle {
+    font-size: 1.45rem;
+  }
+
+  .weekHighlightImage {
+    height: auto;
+    width: 100%;
+  }
+
+  .weekHighlightTitle {
+    margin-top: 1rem;
+  }
+
+  .articleText {
+    font-size: 0.9rem;
+  }
+
+  /* changing background image for mobile to maintain perspective of image */
+  .driveSoloLinks {
+    height: 50vh;
+    background-image: url("./assets/driveSoloBackgroundMobile.jpg");
+  }
+
+  .driveSoloLinksList {
+    padding-top: 0;
+  }
+  
+  .driveSoloLinksListItem {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    min-height: 75vh;
+    width: auto;
+  }
+
+  .headerHeroTitle {
+    padding-top: calc(60vh - 4.85rem)
+  }
+
+  .weekHighlightTitle,
+  .articleTitle {
+    font-size: 1.2rem;
+  }
+
+  .footerContact,
+  .footerNav {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footerContact {
+    font-size: 0.8rem;
+  }
+}
