@@ -33,7 +33,7 @@ img {
 a {
   text-decoration: none;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #fcfbfb;
 }
 
 .container {
@@ -81,7 +81,7 @@ a {
   min-height: 100vh;
   width: 100%;
 
-  color: #ffffff;
+  color: #fcfbfb;
 
   position: relative;
 }
@@ -115,7 +115,7 @@ a {
 }
 
 .mainNav a:hover {
-  border-bottom: 0.1rem white solid;
+  border-bottom: 0.1rem #fcfbfb solid;
 }
 
 /* hamburger menu button */
@@ -124,7 +124,7 @@ a {
   border: none;
   margin: 0;
   padding: 0;
-  color: white;
+  color: #fcfbfb;
   font-size: 1.25rem;
 
   position: absolute;
@@ -292,7 +292,7 @@ a {
 /* footer section */
 .footer {
   background-color: #6c0918;
-  color: #ffffff;
+  color: #fcfbfb;
   /* increased line height to match design */
   line-height: 1.5rem;
 }
@@ -339,7 +339,7 @@ fieldset {
 
 .footerEmailSubmit {
   background-color: #000000;
-  color: #ffffff;
+  color: #fcfbfb;
 
   border: none;
   padding: 0.5rem 0.75rem;
