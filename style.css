@@ -140,7 +140,8 @@ a {
   letter-spacing: 1px;
   color: #cc1d36;
 
-  padding-top: calc(53vh - 4.85rem);
+  /* calc takes into account the height of the nav and nav title */
+  padding-top: calc(53vh - 3.21rem);
 }
 
 .headerHeroSubTitle {
@@ -386,11 +387,6 @@ fieldset {
 }
 
 @media (max-width: 1150px) {
-  /* re-position hero image position so main title stays in black space */
-  .header {
-    background-position-x: 35%;
-  }
-
   /* reduce margin on main title */
   .mainTitle {
     margin: 2rem 0;
@@ -441,7 +437,7 @@ fieldset {
 
   /* repositioning the hero title */
   .headerHeroTitle {
-    padding-top: calc(66vh - 4.85rem);
+    padding-top: 55vh;
   }
 
   /* removing float from week highlight section */
@@ -463,7 +459,6 @@ fieldset {
   .weekHighlightText {
     margin-left: 0;
     width: 100%;
-    text-align: center;
   }
 
   .weekHighlightTitle {
@@ -517,10 +512,13 @@ fieldset {
   }
 }
 
-@media (max-width: 550px) {
-  /* re-position hero image position so main title stays in black area */
-  .header {
-    background-position-x: 40%;
+@media (max-width: 600px) {
+  /* change background to mobile image */
+ .header {
+    background: url('./assets/heroMobile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat
   }
 
   .headerHeroTitle {
@@ -569,13 +567,8 @@ fieldset {
 }
 
 @media (max-width: 400px) {
-  .header {
-    min-height: 75vh;
-    width: auto;
-  }
-
   .headerHeroTitle {
-    padding-top: calc(60vh - 4.85rem)
+    padding-top: 56vh;
   }
 
   .weekHighlightTitle,
@@ -583,6 +576,7 @@ fieldset {
     font-size: 1.2rem;
   }
 
+  /* removed float, not called for in mobile design but looks better below  400px */
   .footerContact,
   .footerNav {
     float: none;
